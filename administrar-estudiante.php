@@ -106,8 +106,8 @@ include "frontend/head.php";
                                                     <tbody>
                                                         <?php
                                                         while ($f = $consulta_curso->fetch_assoc()) {
-                                                            $idestudiante = base64_encode($f['idestudiante'].$key);
-                                                            $idcurso = base64_encode($f['idestudiante_curso'].$key);
+                                                            $idestudiante = base64_encode($f['idestudiante'] . $key);
+                                                            $idcurso = base64_encode($f['idestudiante_curso'] . $key);
                                                         ?>
                                                             <tr align="center">
                                                                 <td>
@@ -130,7 +130,7 @@ include "frontend/head.php";
                                         </div>
                                         <div class="card-footer text-center">
                                             <a href="gestionar-estudiante" class="btn btn-success float-center"> Volver a Gestionar</a>
-                                            <a href="asignar-curso" class="btn btn-primary float-center"> Agregar nuevo Curso</a>
+                                            <a class="btn btn-primary float-center" data-bs-toggle="modal" href="#asignar_curso">Asignar nuevo Curso</a>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +150,35 @@ include "frontend/head.php";
     <?php
     include "frontend/script.php";
     ?>
-
+    <div class="modal fade" id="asignar_curso" tabindex="-1" role="dialog" aria-labelledby="asignar_curso" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form action="controller/asignar_curso" method="post">
+                    <div class="modal-body">
+                        <h4 class="text-uppercase text-center">Asignar Curso a Estudiante</h4>
+                        <div class="form-group">
+                            <label>Selecionar Curso <i style="color: red">*</i></label>
+                            <input type="hidden" class="form-control" value="<?php echo $id; ?>" id="estudiante" name="estudiante">
+                            <select id="curso" name="curso" class="form-control select2" style="width: 100%;" required>
+                                <option value="">Seleccione Curso </option>
+                                <?php
+                                $course = "SELECT*FROM test_courses c";
+                                foreach ($conexion->query($course) as $sel_course) { ?>
+                                    <option value="<?php echo $sel_course['c_id']; ?>"><?php echo $sel_course['name'] . " - Créditos: " . $sel_course['credits']; ?></option>
+                                <?php }
+                                ?>
+                            </select>
+                        </div>
+                        <br>
+                    </div>
+                    <center>
+                        <button class="btn btn-success btn-lg text-uppercase" type="submit">Asignar</button>
+                    </center>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
