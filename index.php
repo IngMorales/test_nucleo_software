@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <?php
-include 'frontend/head.php';
+include "frontend/head.php";
 ?>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
     <div class="wrapper">
-
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dist/img/AdminLTELogo.png" height="60" width="60">
+            <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="Logo" height="100" width="100">
         </div>
-
         <?php
-        include 'frontend/barra_superior.php';
-        include 'frontend/menu.php';
+        include "frontend/barra_superior.php";
+        include "frontend/menu.php";
         ?>
 
-        <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Página Principal</h1>
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper iframe-mode" data-widget="iframe" data-loading-screen="750">
+                    <div class="nav navbar navbar-expand navbar-white navbar-light border-bottom p-0">
+                        <a class="nav-link bg-danger" href="index" role="button" aria-haspopup="true" aria-expanded="false">Control</a>
+                        
+                        <a class="nav-link bg-light" href="#" data-widget="iframe-scrollleft"><i class="fas fa-angle-double-left"></i></a>
+                        <ul class="navbar-nav overflow-hidden" role="tablist"></ul>
+                        <a class="nav-link bg-light" href="#" data-widget="iframe-scrollright"><i class="fas fa-angle-double-right"></i></a>
+                        <a class="nav-link bg-light" href="#" data-widget="iframe-fullscreen"><i class="fas fa-expand"></i></a>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-empty">
+                            <h2 class="display-4">¡Ninguna pestaña seleccionada!</h2>
                         </div>
-
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active">Principal</li>
-                            </ol>
+                        <div class="tab-loading">
+                            <div>
+                                <h2 class="display-4">La pestaña se está cargando <i class="fa fa-sync fa-spin"></i></h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <section class="content">
-                <div class="container-fluid">
-
-                </div>
-            </section>
-        </div>
         <?php
         include "frontend/footer.php";
         ?>
