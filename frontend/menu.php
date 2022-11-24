@@ -76,7 +76,7 @@
 
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
-                <a href="index2" class="d-block">index2.php</a>
+                <a href="index3" class="d-block">index3.php</a>
             </div>
         </div>
     </div>
