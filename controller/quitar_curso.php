@@ -9,9 +9,9 @@ $id_user = base64_encode($id_estudiante.$key);
 $id_course = base64_encode($id_curso.$key);
 
 
-    $actualizar = "DELETE FROM test_courses_x_student WHERE  cxs_id = '$id_curso' AND s_id = '$id_estudiante'";
+    $eliminar = "DELETE FROM test_courses_x_student WHERE  cxs_id = '$id_curso' AND s_id = '$id_estudiante'";
 	
-	if ( $conexion->query( $actualizar ) == true ) { 
+	if ( $conexion->query( $eliminar ) == true ) { 
 		header('location: ../alertas.php?msj=SE QUITO EL CURSO DEL ESTUDIANTE&c=stack1&p=administrar_curso&t=success&id='.$id_user);
 	} else {
 		header('location: ../alertas.php?msj=ERROR QUITAR EL CURSO, POR FAVOR VUELVA A INTENTARLO O CONSULTE CON SOPORTE&c=stack1&p=administrar_curso&t=warning&id='.$id_user);

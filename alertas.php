@@ -38,21 +38,25 @@
         case 'sin_acceso':
             $pagina = 'index';
             break;
-        case 'cerrar_sesion':
-            $pagina = 'controladores/cerrar_sesion';
-            break;
         case 'crear_estudiante':
             $pagina = 'crear-estudiante';
             break;
-
         case 'actualizar_estado':
             $pagina = 'gestionar-estudiante';
+            break;
+        case 'asignar_curso':
+            $pagina = 'asignar-curso';
+            break;
+        case 'crear_curso':
+            $pagina = 'crear-curso';
+            break;
+        case 'eliminar_curso':
+            $pagina = 'gestionar-curso';
             break;
 
         case 'editar_datos':
             $pagina = 'editar-datos?id=' . $idestudiante;
             break;
-
         case 'administrar_curso':
             $pagina = 'administrar-estudiante?id=' . $idestudiante;
             break;
