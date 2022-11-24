@@ -20,6 +20,7 @@
     $p = htmlentities($_GET['p']);
     $t = htmlentities($_GET['t']);
     @$idestudiante = htmlentities($_GET['id']);
+    @$idcurso = htmlentities($_GET['id']);
 
 
     switch ($c) {
@@ -57,10 +58,12 @@
         case 'editar_datos':
             $pagina = 'editar-datos?id=' . $idestudiante;
             break;
+        case 'editar_curso':
+            $pagina = 'editar-curso?id=' . $idcurso;
+            break;
         case 'administrar_curso':
             $pagina = 'administrar-estudiante?id=' . $idestudiante;
             break;
-
     }
 
     $dir = @$carpeta . @$pagina;

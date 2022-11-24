@@ -73,5 +73,11 @@
                 ?>
             </ul>
         </nav>
+
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="info">
+                <a href="index2" class="d-block">index2.php</a>
+            </div>
+        </div>
     </div>
 </aside>
